@@ -5,16 +5,16 @@
     <title>Xime Perez E</title>
     <link rel="icon" type="image/x-icon" href="css/imagenes/heart.gif">
     <!-- <link rel="stylesheet" href="https://unpkg.com/7.css"> -->
-    <!-- <link rel = "stylesheet" href= "css/styles.css"> -->
+    <link rel = "stylesheet" href= "css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Mi página web</h1>
-        <h4>Xime Pérez E</h4>
+        <h1 class="center">Mi página web</h1>
+        <h4 class="center">Xime Pérez E</h4>
     </header>
     <h2>Datos generales</h2>
-    <table>
+    <table class="general">
         <tr>
             <th class="tablaGral">Nombre</th>
             <td class="tablaGral"> Ximena Pérez Escalante</td>
@@ -29,13 +29,13 @@
         </tr>
     </table>
     <h2 class="center">Sobre mí</h2>
-    <ul>
+    <ul id="aboutme">
         <li>Tengo 19 años</li>
         <li>Soy del Estado México</li>
         <li>Mis color favoritos son el rosa y el azul</li>
         <li>Mi serie favorita es Fleabag</li>
     </ul>
-    <h2>Mis intereses</h2>
+    <h2 class="center">Mis intereses</h2>
     <table>
         <tr>
             <td><img src="css/imagenes/maquillaje.jpg" width="250" height="400"></td>
@@ -48,7 +48,12 @@
         </tr>
 
     </table>
-    <h2>Preguntas</h2>
+    <p>Envía sugerencias de canciones:</p>
+    <form>
+        <input type="url" id="canciones" name="canciones">
+        <input type="submit" value="Enviar">
+    </form>
+    <h2 class="center">Preguntas</h2>
     <img width="32" height="32" src="https://img.icons8.com/color-pixels/32/grey.png" alt="grey" />
     <ol>
         <li class="pad">
@@ -125,7 +130,7 @@
             que en HTML5 estén desaprobados.</strong>
         </li>
         <p>Son términos obsoletos que suelen ser sustituidos por uno nuevo. Ejemplos:</p>
-        <table>
+        <table class="preguntas">
             <tr>
                 <thead>
                     <th>Etiquetas</th>
@@ -170,34 +175,34 @@
         </li>
         <p><strong>Elemento: <em>&lttable&gt</em></strong></p>
         <p>Estructura:</p>
-        <table>
+        <table class="preguntas">
             <thead>
                 <th>Etiqueta</th>
                 <th>Significado</th>
             </thead>
             <tr>
                 <td>&ltth&gt</td>
-                <td>Encabezado (table header)</td>
+                <td class="left">Encabezado (table header)</td>
             </tr>
             <tr>
                 <td>&lttd&gt</td>
-                <td>Datos (table data)</td>
+                <td class="left">Datos (table data)</td>
             </tr>
             <tr>
                 <td>&lttr&gt</td>
-                <td>Fila (table row)</td>
+                <td class="left">Fila (table row)</td>
             </tr>
             <tr>
                 <td>&ltthead&gt</td>
-                <td>Conjunto de etiquetas que son parte del encabezado de la tabla</td>
+                <td class="left">Conjunto de etiquetas que son parte del encabezado de la tabla</td>
             </tr>
             <tr>
                 <td>&lttbody&gt</td>
-                <td>Conjunto de etiquetas parte del cuerpo de la tabla</td>
+                <td class="left">Conjunto de etiquetas parte del cuerpo de la tabla</td>
             </tr>
             <tr>
                 <td>&lttfoot&gt</td>
-                <td>Conjunto de etiquetas que son parte del pie de la página</td>
+                <td class="left">Conjunto de etiquetas que son parte del pie de la página</td>
             </tr>
         </table>
         <p>Estilo:</p>
@@ -211,54 +216,54 @@
             <strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
         </li>
         <p><strong>Elemento: <em>&ltform&gt</em></strong></p>
-        <table>
+        <table class="preguntas">
             <thead>
                 <th>Etiqueta</th>
                 <th>Descripción</th>
             </thead>
                 <tr>
                     <td>&ltinput&gt</td>
-                    <td>Depende del &lttype&gt que tenga.</td>
+                    <td class="left">Depende del &lttype&gt que tenga.</td>
                 </tr>
                 <tr>
                     <td>&ltlabel&gt</td>
-                    <td>Sirve para los usuarios que usan screen-readers</td>
+                    <td class="left">Sirve para los usuarios que usan screen-readers</td>
                 </tr>
                 <tr>
                     <td>&ltselect&gt</td>
-                    <td>Lista desplegable</td>
+                    <td class="left">Lista desplegable</td>
                 </tr>
                 <tr>
                     <td>&lttextarea&gt</td>
-                    <td>Cuadro de texto</td>
+                    <td class="left">Cuadro de texto</td>
                 </tr>
                 <tr>
                     <td>&ltbutton&gt</td>
-                    <td>Botón</td>
+                    <td class="left">Botón</td>
                 </tr>
                 <tr>
                     <td>&ltfieldset&gt</td>
-                    <td>Agrupación de datos en un formulario</td>
+                    <td class="left">Agrupación de datos en un formulario</td>
                 </tr>
                 <tr>
                     <td>&ltlegend&gt</td>
-                    <td>Leyenda de los datos dentro de &ltfieldset&gt</td>
+                    <td class="left">Leyenda de los datos dentro de &ltfieldset&gt</td>
                 </tr>
                 <tr>
                     <td>&ltdatalist&gt</td>
-                    <td>Lista de opciones predefinidas</td>
+                    <td class="left">Lista de opciones predefinidas</td>
                 </tr>
                 <tr>
                     <td>&ltoutput&gt</td>
-                    <td>Resultado de un cálculo hecho por un script</td>
+                    <td class="left">Resultado de un cálculo hecho por un script</td>
                 </tr>
                 <tr>
                     <td>&ltoption&gt</td>
-                    <td>Opciones dentro de listas</td>
+                    <td class="left">Opciones dentro de listas</td>
                 </tr>
                 <tr>
                     <td>&ltoptgroup&gt</td>
-                    <td>Agrupar opciones</td>
+                    <td class="left">Agrupar opciones</td>
                 </tr>
         </table>
         <p>Tipos de input en HTML:</p>
@@ -320,6 +325,29 @@
             <li>Integración y Prueba del Sistema</li>
             <li>Operación y Mantenimiento</li>
         </ul>
+        <p class="center">
+            <em>Laboratorio 3</em>
+        </p>
+        <li>
+            <strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</strong>
+        </li>
+        <p>Debe usarse lo menos posible, idealmente nunca, debido a que denota una mala planeación del diseño.</p>
+        <li>
+            <strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong>
+        </li>
+        <p>Porque se debe escoger una imagen de alta calidad, que sea coherente con el contenido de la página y que no signifique
+        un mayor tiempo de carga.</p>
+        <li>
+            <strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo 
+                entre %, px y pt?</strong>
+        </li>
+        <p>Se recomienda usar unidades relativas, más que absolutas, ya que estas últimas se ven diferentes desde nuestra
+        perspectiva de acuerdo al dispositivo que se esté utilizando. Para tipografías es mejor usar <strong><em>em</em></strong> 
+        y para alinear texto con imágenes es mejor <strong><em>px</em></strong>.</p>
+        <li>
+            <strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong>
+        </li>
+        <p>Porque se reduce el tamaño del archivo y se mandan menos bytes, haciendo que la página cargue mucho más rápido.</p>
     </ol>
     <footer>
         Esta página fue realizada en 

@@ -5,7 +5,7 @@ body {
     line-height: 1.5;        
     padding: 4em 1em;
     background-color: aliceblue;
-
+}
 /*Selector universal*/
 *{
     color: rgb(61, 79, 96);

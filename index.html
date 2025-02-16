@@ -2,10 +2,330 @@
 <html>
 
 <head>
-    
+    <title>Xime Perez E</title>
+    <link rel="icon" type="image/x-icon" href="css/imagenes/heart.gif">
 </head>
 
 <body>
+    <header>
+        <h1>Mi página web</h1>
+        <h4>Xime Pérez E</h4>
+    </header>
+    <h2>Datos generales</h2>
+    <table>
+        <tr>
+            <th class="tablaGral">Nombre</th>
+            <td class="tablaGral"> Ximena Pérez Escalante</td>
+        </tr>
+        <tr>
+            <th class="tablaGral">Matrícula</th>
+            <td class="tablaGral">A01751827</td>
+        </tr>
+        <tr>
+            <th class="tablaGral">Correo electrónico</th>
+            <td class="tablaGral">A01751827@tec.mx</td>
+        </tr>
+    </table>
+    <h2 class="center">Sobre mí</h2>
+    <ul>
+        <li>Tengo 19 años</li>
+        <li>Soy del Estado México</li>
+        <li>Mis color favoritos son el rosa y el azul</li>
+        <li>Mi serie favorita es Fleabag</li>
+    </ul>
+    <h2>Mis intereses</h2>
+    <table>
+        <tr>
+            <td><img src="css/imagenes/maquillaje.jpg" width="250" height="400"></td>
+            <td><img src="css/imagenes/alberca.jpg" width="275" height="400"></td>
+        </tr>
+        <tr>
+            <td><img src="css/imagenes/musica.jpg" width="250" height="350"></td>
+            <td><img src="css/imagenes/l4d.jpg" width="275" height="190"></td>
+            <td><img src="css/imagenes/arte.jpg" width="300" height="200"></td>
+        </tr>
+
+    </table>
+    <h2>Preguntas</h2>
+    <img width="32" height="32" src="https://img.icons8.com/color-pixels/32/grey.png" alt="grey" />
+    <ol>
+        <li class="pad">
+            <strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+        </li>
+        <p>
+            De acuerdo con la BBC, <strong> <em>Internet</em> </strong> es una red
+            de computadoras que están conectadas entre sí en todo el mundo.
+            <br>
+            Mientras que <strong> <em>World Wide Web</em> </strong> es una colección
+            gigantezca de páginas que se encuentran en esa red de computadoras.
+            <br>
+            Por lo tanto, usamos internet para acceder a la World Wide Web.
+
+        </p>
+        <li class="pad">
+            <strong>¿Cuáles son las partes de un URL?</strong>
+        </li>
+        <p>
+            Según IBM, se forma de tres a cuatro componentes:
+        </p>
+        <ul>
+            <li>Un esquema: identifica el protocolo que se utilizará para acceder al recurso en Internet. Puede ser HTTP o HTTPS.</li>
+            <li>Un nombre de host: identifica el host que tiene el recurso y también pueden estar seguidos de un número de puerto.</li>
+            <li>Un camino: identifica el recurso específico en el host al que el cliente web quiere acceder.</li>
+            <li>Una cadena de consulta: En caso de ser utilizada, suele ser una cadena de pares de nombre y valor, que son separados 
+                por un ampersand (&)</li>
+        </ul>
+        <li class="pad">
+            <strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong>
+        </li>
+        <ul>
+            <li><strong>GET:</strong> solicita una representación de un recurso específico. Sólo puede recuperar datos.</li>
+            <li><strong>HEAD:</strong> pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.</li>
+            <li><strong>POST:</strong> envía una entidad a un recurso en específico, causando a menudo un cambio en el estado o 
+            efectos secundarios en el servidor.</li>
+            <li><strong>PUT:</strong> reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.</li>
+            <li><strong>PATCH:</strong> aplica modificaciones parciales a un recurso.</li>
+            <li><strong>DELETE:</strong> borra un recurso en específico.</li>
+        </ul>
+        <li class="pad">
+            <strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en
+        algún sitio? ¿Por qué?</strong>
+        </li>
+        <p>Se debe usar el método <strong><em>POST</em></strong> porque así no se ven los datos en el URL para que una persona externa 
+            se los pueda robar.</p>
+        <li>
+            <strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong>
+        </li>
+        <p>Este código de respuesta de estado satisfactorio, también conocido como <strong><em>OK</em></strong>, significa que una 
+            solicitud ha tenido éxito.
+            Por lo que no representa ningún error.
+        </p>
+        <li>
+            <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se
+            encontró con un error 404? ¿Por qué?</strong>
+        </li>
+        <p>Este error significa <strong><em>Page Not Found</em></strong>, de acuerdo con Google, dependiendo de la causa se debe 
+        considerar corregirlo o no. <br>
+        Por ejemplo, si ocurre por una página que ha sido eliminada completamente y no tiene un reemplazo o se trata de una URL 
+        que nunca ha existido en el sitio, <em>no vale la pena cambiarlo</em>.<br>Sin embargo, si es una URL enviada para su indexación, 
+        <em>vale la pena corregir el error</em>.<br>Finalmente, si se debe a un error de ortografía o escritura cometido frecuentemente 
+        por los usuarios, se recomienda mapear las palabras alternativas a la misma página del sitio usando redirecciones u otros 
+        mecanismos.</p>
+        <li>
+            <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se
+            encontró con un error 500? ¿Por qué?</strong>
+        </li>
+        <p>Sí, ya que su significado es <strong><em>Internal Server Error</em></strong> y ocurre cuando el servidor se encuentra
+        una condición inesperada que le impide cumplir con la solicitud. A veces va acompañado de texto, pero en navegadores como Firefox
+        y Safari, puede ser representado por una pantalla en blanco.</p>
+        <li>
+            <strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4
+            que en HTML5 estén desaprobados.</strong>
+        </li>
+        <p>Son términos obsoletos que suelen ser sustituidos por uno nuevo. Ejemplos:</p>
+        <table>
+            <tr>
+                <thead>
+                    <th>Etiquetas</th>
+                    <th>Atributos</th>
+                </thead>
+            </tr>
+            <tr>
+                <td>&lts&gt</td>
+                <td>type</td>
+            </tr>
+            <tr>
+                <td>&ltu&gt</td>
+                <td>bgcolor</td>
+            </tr>
+            <tr>
+                <td>&ltbasefont&gt</td>
+                <td>text</td>
+            </tr>
+            <tr>
+                <td>&ltcenter&gt</td>
+                <td>align</td>
+            </tr>
+            <tr>
+                <td>&ltframe&gt</td>
+                <td>profile</td>
+            </tr>
+        </table>
+        <li>
+            <strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong>
+        </li>
+        <ul>
+            <li>Introducción de etiquetas semánticas como &ltheader&gt, &ltfooter&gt, &ltsection&gt y &ltarticle&gt.</li>
+            <li>Control de audio y video con las etiquetas &ltaudio&gt y &ltvideo&gt.</li>
+            <li>Las aplicaciones web pueden almacenar datos localmente en el dispositivo del usuario gracias a la 
+                <em>localStorage</em> API.
+            </li>
+            <li>Los sitios web pueden acceder a la ubicación geográfica de sus usuarios.</li>
+            <li>Uso de base de datos en SQL para almacenar datos Offline.</li>
+        </ul>
+        <li>
+            <strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+        </li>
+        <p><strong>Elemento: <em>&lttable&gt</em></strong></p>
+        <p>Estructura:</p>
+        <table>
+            <thead>
+                <th>Etiqueta</th>
+                <th>Significado</th>
+            </thead>
+            <tr>
+                <td>&ltth&gt</td>
+                <td>Encabezado (table header)</td>
+            </tr>
+            <tr>
+                <td>&lttd&gt</td>
+                <td>Datos (table data)</td>
+            </tr>
+            <tr>
+                <td>&lttr&gt</td>
+                <td>Fila (table row)</td>
+            </tr>
+            <tr>
+                <td>&ltthead&gt</td>
+                <td>Conjunto de etiquetas que son parte del encabezado de la tabla</td>
+            </tr>
+            <tr>
+                <td>&lttbody&gt</td>
+                <td>Conjunto de etiquetas parte del cuerpo de la tabla</td>
+            </tr>
+            <tr>
+                <td>&lttfoot&gt</td>
+                <td>Conjunto de etiquetas que son parte del pie de la página</td>
+            </tr>
+        </table>
+        <p>Estilo:</p>
+        <ul>
+            <li>border</li>
+            <li>width</li>
+            <li>height</li>
+            <li>padding</li>
+        </ul>
+        <li>
+            <strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
+        </li>
+        <p><strong>Elemento: <em>&ltform&gt</em></strong></p>
+        <table>
+            <thead>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </thead>
+                <tr>
+                    <td>&ltinput&gt</td>
+                    <td>Depende del &lttype&gt que tenga.</td>
+                </tr>
+                <tr>
+                    <td>&ltlabel&gt</td>
+                    <td>Sirve para los usuarios que usan screen-readers</td>
+                </tr>
+                <tr>
+                    <td>&ltselect&gt</td>
+                    <td>Lista desplegable</td>
+                </tr>
+                <tr>
+                    <td>&lttextarea&gt</td>
+                    <td>Cuadro de texto</td>
+                </tr>
+                <tr>
+                    <td>&ltbutton&gt</td>
+                    <td>Botón</td>
+                </tr>
+                <tr>
+                    <td>&ltfieldset&gt</td>
+                    <td>Agrupación de datos en un formulario</td>
+                </tr>
+                <tr>
+                    <td>&ltlegend&gt</td>
+                    <td>Leyenda de los datos dentro de &ltfieldset&gt</td>
+                </tr>
+                <tr>
+                    <td>&ltdatalist&gt</td>
+                    <td>Lista de opciones predefinidas</td>
+                </tr>
+                <tr>
+                    <td>&ltoutput&gt</td>
+                    <td>Resultado de un cálculo hecho por un script</td>
+                </tr>
+                <tr>
+                    <td>&ltoption&gt</td>
+                    <td>Opciones dentro de listas</td>
+                </tr>
+                <tr>
+                    <td>&ltoptgroup&gt</td>
+                    <td>Agrupar opciones</td>
+                </tr>
+        </table>
+        <p>Tipos de input en HTML:</p>
+        <ul>
+            <li>button</li>
+            <li>checkbox</li>
+            <li>color</li>
+            <li>date</li>
+            <li>datetime-local</li>
+            <li>email</li>
+            <li>file</li>
+            <li>hidden</li>
+            <li>image</li>
+            <li>month</li>
+            <li>number</li>
+            <li>password</li>
+            <li>radio</li>
+            <li>range</li>
+            <li>reset</li>
+            <li>search</li>
+            <li>submit</li>
+            <li>tel</li>
+            <li>text</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+        </ul>
+        <li>
+            <strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</strong>
+        </li>
+        <p>Usando la página <a href="https://html5test.opensuse.org/">html5test</a> en Safari, 
+        tengo un puntaje de 530/571 y en Chrome 541/571.</p>
+        <li>
+            <strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong>
+        </li>
+        <p>Un ciclo de vida engloba la infraestructura, la organización, el personal y todos los 
+            componentes necesarios para la recopilación, procesamiento, almacenamiento, transmisión, 
+            visualización, diseminación y organización de la información.<br> El ciclo se compone de 
+            la siguiente manera:</p>
+        <ul>
+            <li>Planificación</li>
+            <li>Análisis</li>
+            <li>Diseño</li>
+            <li>Implementación</li>
+            <li>Pruebas</li>
+            <li>Instalación o despliegue</li>
+            <li>Uso y mantenimiento</li>
+        </ul>
+        <li>
+            <strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong>
+        </li>
+        <p>Este ciclo en cascada busca hacer las cosas bien desde el inicio y se conforma de la 
+            siguiente manera:
+        </p>
+        <ul>
+            <li>Definición de requerimientos</li>
+            <li>Análisis y Diseño del Software</li>
+            <li>Implementación y Prueba de unidades</li>
+            <li>Integración y Prueba del Sistema</li>
+            <li>Operación y Mantenimiento</li>
+        </ul>
+    </ol>
+    <footer>
+        Esta página fue realizada en 
+        <a href="https://code.visualstudio.com">
+            <strong>Visual Studio Code</strong>
+        </a>
+    </footer>
+    <script src="js/script.js"></script>
     
 </body>
 

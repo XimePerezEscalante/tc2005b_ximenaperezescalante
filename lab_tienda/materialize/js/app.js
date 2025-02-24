@@ -1,14 +1,73 @@
-/* document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  var instances = M.Dropdown.init(elems, options);
+/* 
+
+const file_system = require('fs');
+
+const readline = require('node:readline');
+
+const http = require('http');
+
+const html = "Hola";
+
+const { open } = require('node:fs/promises');
+
+const Readable = require('stream').Readable;
+
+
+leer = async () => {
+  const file = await open('/Users/ximenaperezescalante/tc2005b_ximenaperezescalante/lab_tienda/index.html');
+  let nuevoFile = "";
+  const s = new Readable();
+  s._read = () => {}; // redundant? see update below
+  
+  for await (const line of file.readLines()) {
+    //console.log(line);
+    s.push(line);
+  } 
+  await file.close();
+  console.log(s);
+  let s2 = Buffer.from("Node.js");
+  console.log(s2.toString());
+};
+
+const server = http.createServer( (request, response) => {
+  if (request.method == "GET" && (request.url == "/talla" || request.URL == "/")){
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    response.write(html);
+    response.end();
+  }
+  else if (request.method == "POST" && request.URL == "/talla"){
+
+  }
+  else{
+    const archivo = leer;
+    //response.write(archivo);
+    console.log(archivo);
+    response.write('El sitio no existe');
+    response.end();
+  }
 });
+server.listen(3000);  */
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('select');
-  M.FormSelect.init('select');
-  //M.FormSelect.getInstance('select');
-}); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Constantes
 const descuento = 0.30;
@@ -173,10 +232,7 @@ function hide_materiales(){
   x.innerHTML = "";
 }
 
-var dropdowns = document.querySelectorAll('.dropdown-trigger')
-for (var i = 0; i < dropdowns.length; i++){
-    M.Dropdown.init(dropdowns[i]);
-}
+
 
 
 

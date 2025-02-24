@@ -63,7 +63,9 @@
                         <div class="col s3">
                             <h6>Tamaño:</h6>
                         </div>
-                        <input class="input-field col s3 white-text" list="calzado_tams" id="calzado_tam">
+                        <form action="/talla" method="POST">
+                            <label for="calzado_tam">Talla</label>
+                        <input class="input-field col s3 white-text" list="calzado_tams" id="calzado_tam" name="calzado_tam">
                             <datalist id="calzado_tams">
                                 <option value="21 cm"></option>
                                 <option value="22 cm"></option>
@@ -92,6 +94,7 @@
                                     class="material-icons left">shopping_cart</i>Agregar al carrito</a>
                             </div>
                         </div>
+                    </form>
 
                         <div class="row">
                             <div class="col s9">

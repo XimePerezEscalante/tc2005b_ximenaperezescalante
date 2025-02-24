@@ -28,4 +28,3 @@ for (let elem of arreglo){
 function leer_texto(texto){
     file_system.writeFileSync('ejericio2.txt', texto); 
 }
-//file_system.writeFileSync('hola.txt', 'Hola desde Node'); 

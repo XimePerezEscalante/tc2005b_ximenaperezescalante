@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="materialize/css/imagenes/tienda_icono.png">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="materialize/css/style.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Falda</title>
+</head>
+
+<body class="grey lighten-5">
+    <div id="head1">
+        <img id="logo" src="materialize/css/imagenes/header_tienda.png" alt="logo tienda de ximena">
+    </div>
+
+    <div class="container">
+        <header class="center-align">
+            <nav>
+                <div class="nav-wrapper brown darken-2 z-depth-3">
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="preguntas.html">Preguntas</a></li>
+                        <li><a href="collapsible.html">Contacto</a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a onclick="desplegar_carrito('info_pago_f','productos_f','precios_f','main_falda')"><i class="material-icons white-text">shopping_cart</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="card-panel brown lighten-3 z-depth-2">
+                <span class="white-text"><strong>30% de descuento en <em>TODA</em> la tienda</strong></span>
+            </div>
+        </header>
+
+        <div class="row" id="info_pago_f">
+            <div class="col s8 brown brown-text text-lighten-5">
+                <h3>Tu carrito:</h3><span id="productos_f" class="brown-text text-lighten-5"></span>
+            </div>
+            <div class="col s4 brown lighten-4 brown-text">
+                <h3>Total:</h3><span id="precios_f"></span>
+            </div>
+        </div>
+
+
+        <div class="row brown white-text" id="main_falda">
+            <div class="col s6">
+                <div class="responsive-img s6 white z-depth-1"><img id="tenis_2"
+                        src="materialize/css/imagenes/falda.jpg"></div>
+            </div>
+
+            <div class="col s6">
+                <div class="row">
+                    <div class="col s10 offset ">
+                        <h3><strong>Falda Tea Time</strong></h3>
+
+                        <span>
+                            <h4 id="precio_old" onmousemove="precio_old_f(this,falda_b2s)"
+                                onmouseout="precio_discount_f(this,falda_b2s)">
+                                $350 MXN</h4>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s3">
+                        <h6>Talla:</h6>
+                    </div>
+                    <input class="input-field col s3 white-text" list="falda_tallas" id="falda_talla">
+                    <datalist id="falda_tallas">
+                        <option value="XS"></option>
+                        <option value="S"></option>
+                        <option value="M"></option>
+                        <option value="G"></option>
+                        <option value="XG"></option>
+                        <option value="XXG"></option>
+                        <option value="XXXG"></option>
+                    </datalist>
+
+                </div>
+
+                <div class="row">
+                    <div class="col s3">
+                        <h6>Cantidad:</h6>
+                    </div>
+                    <div class="col s2">
+                        <input class="white-text" type="number" id="quantityFALDAB2S" name="quantityFALDAB2S" min="1"
+                            max="10">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <a class="waves-effect waves-light brown lighten-5 brown-text btn"
+                            onclick="validar_input('falda_tallas','falda_talla','quantityFALDAB2S','falda_b2s')"><i
+                                class="material-icons left">shopping_cart</i>Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s9">
+                        <span><br> <em>Color: Verde de la suerte </em><br>
+                            Fabricado en México con <u><em onmousemove="show_materiales()"
+                                    onmouseout="hide_materiales()">materiales de alta calidad</em></u>
+                        </span>
+
+                    </div>
+                    <div class="col s2 brown lighten-5 brown-text z-depth-4">
+                        <span id="materiales"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer brown darken-2 brown-text text-lighten-5">
+        <div class="container">
+            <div class="row">
+                <div class="col s4"><a href="https://ejuarez.bitbucket.io/tec21/lab6POE.html" class="brown-text text-lighten-5">Laboratorio 6: Programación
+                    Orientada a Objetos</a></div>
+                <div class="col s4 offset-s4 right-align">Gracias por visitar mi tienda</div>
+            </div>
+        </div>
+        <div class="footer-copyright brown darken-1"">
+            <div class=" container">© 2019 Copyright XPE</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="materialize/js/app.js"></script>
+</body>
+</html>

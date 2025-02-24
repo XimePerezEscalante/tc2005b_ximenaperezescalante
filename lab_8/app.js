@@ -25,4 +25,7 @@ for (let elem of arreglo){
 }
 
 //Pregunta 2
-//let oracion = prompt("Escribe algo para que salga en un archivo nuevo:")
+function leer_texto(texto){
+    file_system.writeFileSync('ejericio2.txt', texto); 
+}
+//file_system.writeFileSync('hola.txt', 'Hola desde Node'); 

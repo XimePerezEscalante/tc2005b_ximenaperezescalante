@@ -1,3 +1,25 @@
+//const file_system = require('fs');
+
+//file_system.writeFileSync('hola.txt', 'Hola desde Node'); 
+
+/* const readline = require('node:readline');
+
+const http = require('http');
+
+const html = "";
+
+const server = http.createServer( (request, response) => {
+    console.log(request.url);
+    response.setHeader('Content-Type', 'text/html');
+    var miArchivo = file_system.createReadStream("index.html");
+    miArchivo.pipe(response);
+    //response.write(miArchivo);
+    //response.end();
+});
+server.listen(3000);
+ */
+
+
 const file_system = require('fs');
 
 //file_system.writeFileSync('hola.txt', 'Hola desde Node'); 

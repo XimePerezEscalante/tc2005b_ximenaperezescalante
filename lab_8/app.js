@@ -11,8 +11,10 @@ const html = "";
 const server = http.createServer( (request, response) => {
     console.log(request.url);
     response.setHeader('Content-Type', 'text/html');
-    response.write(html);
-    response.end();
+    var miArchivo = file_system.createReadStream("index.html");
+    miArchivo.pipe(response);
+    //response.write(miArchivo);
+    //response.end();
 });
 server.listen(3000);
 
@@ -25,6 +27,8 @@ for (let elem of arreglo){
 }
 
 //Pregunta 2
-function leer_texto(texto){
-    file_system.writeFileSync('ejericio2.txt', texto); 
+function escribir(texto){
+    file_system.writeFileSync('ejercicio2.txt', texto); 
 }
+
+module.exports = { escribir }

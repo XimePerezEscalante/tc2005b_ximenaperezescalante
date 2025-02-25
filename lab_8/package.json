@@ -1,0 +1,22 @@
+{
+  "name": "lab_8",
+  "version": "1.0.0",
+  "description": "Laboratorios Ximena Perez",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante.git"
+  },
+  "keywords": [
+    "TC2005B"
+  ],
+  "author": "Ximena Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante/issues"
+  },
+  "homepage": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante#readme"
+}

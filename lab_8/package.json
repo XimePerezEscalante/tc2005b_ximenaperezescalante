@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante/issues"
   },
-  "homepage": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante#readme"
+  "homepage": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

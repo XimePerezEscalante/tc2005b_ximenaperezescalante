@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html>
 
 <head>
@@ -25,4 +25,26 @@
     <script type="text/javascript" src="app.js"></script>
 </body>
 
-</html>
+</html>`; 
+
+const Persona = require('../models/nombre.model');
+
+// Acciones del controlador
+exports.get_nombre = (request, response, next) => {
+    response.render('agregar_nombre');
+};
+
+
+
+
+exports.post_nombre = (request,response, next) => {
+    console.log(request.body);
+    const persona1 = new Persona(request.body.nombre);
+    persona1.save();
+    response.redirect('/nombres')
+    console.log(nombres);
+};
+
+exports.get_root = ((request,response,next) => {
+    response.render('agregar_nombre', {nombres: Persona.fetchAll()});
+    })

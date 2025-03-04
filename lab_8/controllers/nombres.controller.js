@@ -32,6 +32,7 @@ const Persona = require('../models/nombre.model');
 // Acciones del controlador
 exports.get_nombre = (request, response, next) => {
     response.render('agregar_nombre');
+    console.log(request.session.username);
 };
 
 

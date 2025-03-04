@@ -10,9 +10,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+const session = require('express-session');
+
+app.use(session({
+    secret: 'string secreto omg',
+    resave: false,
+    saveUninitialized: false,
+}));
+
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
+
+const usersRoutes = require('./routes/usersRoutes');
+app.use('/users', usersRoutes);
 
 //Middleware
 app.use((request, response, next) => {

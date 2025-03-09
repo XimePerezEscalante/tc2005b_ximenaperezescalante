@@ -16,6 +16,14 @@ router.get('/tienda' ,(request,response,next)=> {
     response.sendFile(path.join(__dirname, '..','views','index.html'));
 } ); 
 
-router.get('/',nombre_controller.get_root)
+
+//router.get('/:id', plantas);
+
+
+
+// Ruta raíz
+router.get('/',nombre_controller.get_root);
+
+
 
 module.exports = router;

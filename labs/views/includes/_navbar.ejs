@@ -1,0 +1,22 @@
+<% if (isLoggedIn) { %>
+    <%= username %> 
+    <form action="/users/logout" method="GET">
+        <input class="button" type="submit" value="Logout" />
+    </form>
+<%} else{ %>
+    <form action="/users/login" method="GET">
+        <input class="button" type="submit" value="Login" />
+    </form>
+<%}%>
+
+<% if (info != '') { %>
+    <article class="message is-info">
+        <div class="message-header">
+            <p>Nueva persona</p>
+            <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+            <%=info %>
+        </div>
+    </article>
+<%}%>

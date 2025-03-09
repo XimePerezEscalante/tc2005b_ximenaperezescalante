@@ -1,0 +1,28 @@
+{
+  "name": "lab_10",
+  "version": "1.0.0",
+  "description": "lab rutas y formas",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante.git"
+  },
+  "keywords": [
+    "lab10"
+  ],
+  "author": "Ximena Perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante/issues"
+  },
+  "homepage": "https://github.com/XimePerezEscalante/tc2005b_ximenaperezescalante#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "connect-flash": "^0.1.1",
+    "nodemon": "^3.1.9"
+  }
+}

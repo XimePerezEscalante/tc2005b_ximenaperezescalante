@@ -71,19 +71,18 @@ exports.get_root = ((request,response,next) => {
         console.log(fieldData);
         console.log(rows)
     } */
-   Planta.fetchAll()
+    /* Persona.fetchAll()
         .then(([rows, fieldData]) => {
             console.log(fieldData);
             console.log(rows);
-            response.render('lista_plantas', {
+            response.render('agregar_nombre', {
                 isLoggedIn: request.session.isLoggedIn || false,
                 username: request.session.username || '',
-                plantas: rows,
                 info: mensaje,
             });
         }).catch((error) => {
             console.log(error);
-        });
+        }); */
     console.log(request.get('Cookie'));
     response.render('agregar_nombre', {
         isLoggedIn: request.session.isLoggedIn || false,

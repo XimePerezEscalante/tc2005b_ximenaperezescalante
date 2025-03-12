@@ -6,7 +6,7 @@ router.get('/FreeTrial',(request, response, next) => {
 });
 
 router.post('/FreeTrial',(request,response,next) => {
-    response.redirect('Register');
+    response.redirect('/Register');
 });
 
 

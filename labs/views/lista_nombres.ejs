@@ -1,0 +1,23 @@
+<%- include('includes/_header') %>
+
+    <% if (info !='' ) { %>
+        <div class="notification is-info">
+            <%= info %>
+        </div>
+        <% } %>
+
+            <div class="columns">
+                <% for(let persona of personas) { %>
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="content">
+                                    <a href="/nombre/<%= nombre.id %>"> <%= persona.nombre %></a>
+                                    <p> <%= persona.created_at %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>

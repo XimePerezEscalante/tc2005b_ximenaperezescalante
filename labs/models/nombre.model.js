@@ -8,8 +8,6 @@ module.exports = class Persona {
     }
     save(){
         return db.execute('INSERT INTO Personas(nombre) VALUES (?)', [this.nombre]);
-
-        //personas.push(this);
     }
 
     static fetchAll(){
@@ -17,10 +15,14 @@ module.exports = class Persona {
     }
 
     static fetchOne(id){
-        return db.execute('SELECT * FROM Personas WHERE id = ?');
+        return db.execute('SELECT * FROM Personas WHERE id = ?', [id]);
     }
 
     static fetch(id){
-        return db.execute('SELECT * FROM Personas WHERE id = ?');
+        if (id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
     }
 }

@@ -1,28 +1,24 @@
+const { response, request } = require('express');
 const express = require('express');
 const router = express.Router();
+
+const isAuth = require('../util/is-auth');
 
 const nombre_controller = require('../controllers/nombres.controller');
 
 //Registrar middleware
-router.get('/nombre', nombre_controller.get_nombre);
-
-router.post('/nombre' , nombre_controller.post_nombre);
-
-module.exports = router;
+router.get('/nombre', isAuth, nombre_controller.get_nombre);
+router.post('/nombre', isAuth, nombre_controller.post_nombre);
 
 const path = require('path');
 
-router.get('/tienda' ,(request,response,next)=> {
+router.get('/tienda', isAuth, (request,response,next)=> {
     response.sendFile(path.join(__dirname, '..','views','index.html'));
 } ); 
 
-
-//router.get('/:id', plantas);
-
-
-
+router.get('/:id', isAuth, nombre_controller.get_root);
 // Ruta raíz
-router.get('/',nombre_controller.get_root);
+router.get('/', isAuth, nombre_controller.get_root);
 
 
 

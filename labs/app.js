@@ -22,6 +22,10 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
+const csrf = require('csurf');
+const csrfProtection = csrf(); 
+app.use(csrfProtection); 
+
 const usersRoutes = require('./routes/usersRoutes');
 app.use('/users', usersRoutes);
 

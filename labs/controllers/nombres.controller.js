@@ -34,6 +34,7 @@ exports.get_nombre = (request, response, next) => {
     response.render('agregar_nombre',{
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
     });
     console.log(request.session.username);
 };
@@ -43,11 +44,10 @@ exports.get_nombre = (request, response, next) => {
 
 exports.post_nombre = (request,response, next) => {
     console.log(request.body);
-    const persona1 = new Persona(request.body.nombre);
-    persona1.save()
+    const mi_persona = new Persona(request.body.nombre);
+    mi_persona.save()
     .then( ()=> {
-        request.session.info = 'La persona $';
-
+        request.session.info =  `La persona ${mi_persona.nombre} se ha creado`;
         console.log('nombre guardado');
         response.redirect('/nombre');
         } )
@@ -55,7 +55,7 @@ exports.post_nombre = (request,response, next) => {
         console.log(error);
     });
 
-    response.setHeader('Set-Cookie', `ultimo_nombre=${persona1.nombre}`);
+    response.setHeader('Set-Cookie', `ultimo_nombre=${mi_persona.nombre}`);
     //console.log(nombres);
     
     
@@ -66,11 +66,19 @@ exports.get_root = ((request,response,next) => {
     if (request.session.info){
         request.session.info = '';
     }
-    /* Persona.fetch(request.params.id)
-        .then(([rows, fieldData])) => {
+    Persona.fetch(request.params.id)
+        .then(([rows, fieldData]) => {
         console.log(fieldData);
-        console.log(rows)
-    } */
+        console.log(rows);
+        response.render('lista_nombres', {
+            isLoggedIn: request.session.isLoggedIn || false,
+            username: request.session.username || '',
+            personas: rows,
+            info: mensaje,
+        });
+    }).catch((error) => {
+        console.log(error);
+    })
     /* Persona.fetchAll()
         .then(([rows, fieldData]) => {
             console.log(fieldData);

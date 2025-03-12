@@ -27,7 +27,7 @@ app.use(homepageRoute);
 
 app.use((request, response, next) => {
     console.log('Error 404');
-    response.send(html_404); 
+    response.render('404'); 
 });
 
 app.listen(3000);

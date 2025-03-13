@@ -22,10 +22,19 @@
             <div class="d-flex flex-row-reverse">
                 <a href="/PurpleMode"><img src="https://img.icons8.com/?size=100&id=9DJyyWARDSVh&format=png&color=000000" class="w-25"></a>
                 
-
-                <form action="/Library" method="GET">
-                    <div class="p-2"><button type="Submit" value="Library"
-                            class="btn btn-outline-light">Library</button></div>
-                </form>
+                <% if (isLoggedIn) { %>
+                    <div class="p-2 text-light">
+                        <%= username %>
+                    </div>
+                    <form action="/users/Logout" method="GET">
+                        <div class="p-2"><button type="Submit" value="Logout" class="btn btn-outline-light">Cerrar
+                                Sesión</button></div>
+                    </form>
+                <% } else { %>
+                    <form action="/users/Login" method="GET">
+                        <div class="p-2"><button type="Submit" value="Login" class="btn btn-outline-light">Iniciar
+                                Sesión</button></div>
+                    </form>
+                    <% } %>
             </div>
         </header>

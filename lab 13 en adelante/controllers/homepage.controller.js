@@ -1,5 +1,8 @@
 exports.get_xp3 = (request, response, next) => {
-    response.render('homepage');
+    response.render('homepage', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        username: request.session.username || '',
+    });
 };
 
 const path = require('path');

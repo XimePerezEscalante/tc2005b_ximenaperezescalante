@@ -5,3 +5,7 @@
 .bg-rosa-medio{
     background-color: rgb(168, 108, 139);
 }
+
+.songsLibrary{
+    max-width: 18rem;
+}

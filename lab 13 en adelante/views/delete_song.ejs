@@ -1,0 +1,23 @@
+<%- include('includes/_header') %>
+<%- include('includes/_sidebar') %>
+<% for (let cancion of canciones){ %>
+<div class="col-4 align-items-centerbg-tertiary-rgb rounded">
+    <div class="card border-danger mb-3">
+        <div class="card-header text-secondary">
+            Eliminar canción 
+        </div>
+        <form action="/EliminarCancion/<%= cancion.id %>" method="POST">
+            <div class="card-body text-danger">
+                <h5 class="card-title text-center">¿Estás seguro de que quieres eliminar '<%= cancion.nombre %> de <%=
+                            cancion.artista %>' ?</h5>
+                <p class="card-text">Esta acción es permanente y quitará la canción de tu biblioteca.</p>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            
+            </div>
+        </form>
+        
+    </div>
+</div>
+<% } %>

@@ -5,24 +5,35 @@
         <div class="row">
             <div class="col-md-5 mb-5 text-light fs-1"> <strong>Biblioteca</strong></div>
         </div>
-        <div class="row">
-            <div class="col text-light">
-                <div class="vstack gap-3">
-                    <% for (let cancion of canciones){ %>
-                        <div class="p-4">
-                            <h4>
-                                <span class="badge text-bg-secondary lh-base">
-                                    <%= cancion.name %>
-                                    <br>
-                                    <%= cancion.artist %>
-                                </span>
-                            </h4>
+    </div>
+    <div class="vstack gap-3">  
+        <% for (let cancion of canciones){ %>
+            <div class="container">
+                <div class="card border-info mb-3 songsLibrary">
+                    
+                    <div class="card-header">
+                        <div class="row">
+                            
+                            <div class="col-10 justify-content-start">
+                                <a href="/EliminarCancion/<%= cancion.id %>" class="material-icons link-info link-offset-3 link-underline-opacity-10">
+                                    delete
+                                </a>
+                            </div>
+                            <div class=" col-1 justify-content-end">
+                                <a href="/EditarCancion/<%= cancion.id %>" class="material-icons link-info link-offset-3 link-underline-opacity-10">
+                                    edit
+                                </a>
+                            </div>
+                            
                         </div>
-                        
-                    <%}%>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><%= cancion.nombre %></h5>
+                        <p class="card-text"><%= cancion.artista %></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        <%}%>
     </div>
 </div>
 </div>

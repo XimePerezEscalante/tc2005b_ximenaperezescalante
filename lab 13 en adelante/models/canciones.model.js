@@ -1,4 +1,4 @@
-const canciones = [];
+const db = require('../util/database');
 
 module.exports = class Cancion {
 
@@ -10,12 +10,40 @@ module.exports = class Cancion {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        canciones.push(this);
+        return db.execute('INSERT INTO canciones(nombre,artista) VALUES (?,?)', [this.name, this.artist]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return canciones;
+        return db.execute('SELECT * FROM canciones');
+    }
+
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM canciones WHERE id = ?', [id]);
+    }
+
+    static fetch(id) {
+        if (id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
+    }
+
+    static editSong(id, nuevoNombre, nuevoArtista){
+        if (nuevoArtista && nuevoNombre){
+            return db.execute('UPDATE canciones SET nombre = ?, artista = ? WHERE id = ?', [nuevoNombre, nuevoArtista, id]);
+        }
+        else if (nuevoArtista){
+            return db.execute('UPDATE canciones SET artista = ? WHERE id = ?', [nuevoArtista, id]);
+        }
+        else if (nuevoNombre){
+            return db.execute('UPDATE canciones SET nombre = ? WHERE id = ?', [nuevoNombre, id]);
+        }
+        
+    }
+    static deleteSongUser(id){
+        return db.execute('DELETE FROM canciones WHERE id = ?;', [id]);
     }
 
 }

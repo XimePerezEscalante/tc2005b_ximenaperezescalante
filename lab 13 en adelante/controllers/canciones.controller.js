@@ -4,6 +4,7 @@ exports.get_agregar = (request, response, next) => {
     response.render('add_song',{
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
     });
 };
 
@@ -36,6 +37,7 @@ exports.get_editar = (request, response, next) => {
                     isLoggedIn: request.session.isLoggedIn || false,
                     username: request.session.username || '',
                     canciones: rows,
+                    csrfToken: request.csrfToken(),
                 });
             }).catch((error) => {
                 console.log(error);
@@ -61,6 +63,7 @@ exports.get_eliminar = (request, response, next) => {
                     isLoggedIn: request.session.isLoggedIn || false,
                     username: request.session.username || '',
                     canciones: rows,
+                    csrfToken: request.csrfToken(),
                 });
             }).catch((error) => {
                 console.log(error);

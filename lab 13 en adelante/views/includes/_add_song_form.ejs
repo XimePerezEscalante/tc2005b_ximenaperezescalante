@@ -4,6 +4,7 @@
             <div class="col-md-5 mb-5 text-light fs-1"> <strong>Nueva canción</strong></div>
         </div>
         <form action="/AgregarCancion" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="row">
                 <div class="col-md-5 mb-3 text-light">
                     <div class="input-group mb-3">

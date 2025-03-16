@@ -5,6 +5,10 @@ const users_controller = require('../controllers/users.controller');
 
 const usuarios = [];
 
+router.get('/Signup', users_controller.get_signup);
+
+router.post('/Signup', users_controller.post_signup);
+
 router.get('/Login', users_controller.get_login);
 
 router.post('/Login', users_controller.post_login);

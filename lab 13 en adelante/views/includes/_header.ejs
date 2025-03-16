@@ -29,15 +29,18 @@
                     <div class="p-2 text-light">
                         <%= username %>
                     </div>
-                    <form action="/users/Logout" method="GET">
-                        <div class="p-2"><button type="Submit" value="Logout" class="btn btn-outline-light">Cerrar
-                                Sesión</button></div>
-                    </form>
+                    <a href="/users/Logout">
+                        <button type="Submit" value="Logout" class="btn btn-outline-light">Cerrar Sesión</button>
+                    </a>
                 <% } else { %>
-                    <form action="/users/Login" method="GET">
-                        <div class="p-2"><button type="Submit" value="Login" class="btn btn-outline-light">Iniciar
-                                Sesión</button></div>
-                    </form>
+                    <div class="p-2"> <a href="/users/Login">
+                        <button type="Submit" value="Login" class="btn btn-outline-light">Iniciar Sesión</button>
+                        </a>
+                    </div>
+                    <div class="p-2"><a href="/users/Signup">
+                        <button type="Submit" value="Login" class="btn btn-outline-light">Crear Cuenta</button>
+                        </a>
+                    </div>
                     <% } %>
             </div>
         </header>

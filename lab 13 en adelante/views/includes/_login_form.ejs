@@ -1,17 +1,40 @@
+<% if (info !='' ) { %>
+    <div class="alert alert-info" role="alert">
+        <%= info %>
+    </div>
+<% } %>
+
+<% if (warning !='' ) { %>
+    <div class="alert alert-warning" role="alert">
+        <%= warning %>
+    </div>
+<% } %>
+
 <div class="row">
     <div class="col"></div>
     <div class="col-auto">
         <div class="card  align-items-center border border-success border-5 text-center">
             <p></p>
-            <div class="card-title fs-3 fw-semibold">Inicio de sesión</div>
+            <% if (isNew) { %>
+                <div class="card-title fs-3 fw-semibold">Crear Cuenta</div>
+            <%} else { %>
+                <div class="card-title fs-3 fw-semibold">Inicio de sesión</div>
+            <% } %>
             <div class="card-body">
-                <form action="/users/Login" method="POST">
-                    <label for="usernameLogin" class="form-label fw-medium">Nombre de usuario</label>
-                    <input type="text" class="form-control" id="usernameLogin" name="usernameLogin" required placeholder="usuario">
-                    <label for="contrasenaLogin" class="col-form-label fw-medium">Contraseña</label>
-                    <input type="password" id="contrasenaLogin" name="contrasenaLogin" required class="form-control"
-                        aria-describedby="passwordHelpInline">
+                <form action="/users/<% if (isNew) { %>signup<% } else { %>login<% } %>" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <label for="username" class="form-label fw-medium">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="usuario" required>
+                    <% if (isNew) { %>
+                        <label for="mail" class="form-label fw-medium">Correo
+                        electrónico</label>
+                        <input type="email" class="form-control" id="mail" name="mail" placeholder="nombre@ejemplo.com" required>
+                    <%} %>
+                    <label for="password" class="col-form-label fw-medium">Contraseña</label>
+                    <input type="password" id="password" name="password" required class="form-control"
+                        aria-describedby="passwordHelpInline" required> 
                     <p></p>
+                    
                     <input class="btn btn-success text-center" type="submit" value="Ingresar">
                 </form>
             </div>

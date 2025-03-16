@@ -7,6 +7,7 @@
             Eliminar canción 
         </div>
         <form action="/EliminarCancion/<%= cancion.id %>" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="card-body text-danger">
                 <h5 class="card-title text-center">¿Estás seguro de que quieres eliminar '<%= cancion.nombre %> de <%=
                             cancion.artista %>' ?</h5>

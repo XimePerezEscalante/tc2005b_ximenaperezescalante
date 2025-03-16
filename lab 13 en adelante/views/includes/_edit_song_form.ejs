@@ -6,6 +6,7 @@
             </p>
     
             <form action="/EditarCancion/<%= cancion.id %>" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="row">
                     <div class="input-group mb-3 d-inline-flex p-3">
                         <span class="input-group-text bg-dark text-light" id="basic-addon1">Nombre</span>

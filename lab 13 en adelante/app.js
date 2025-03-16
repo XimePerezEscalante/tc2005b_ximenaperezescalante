@@ -24,6 +24,10 @@ app.use((request, response, next) => {
     next(); 
 });
 
+const csrf = require('csurf');
+const csrfProtection = csrf(); 
+app.use(csrfProtection); 
+
 const usersRoutes = require('./routes/users.routes');
 app.use('/users', usersRoutes);
 

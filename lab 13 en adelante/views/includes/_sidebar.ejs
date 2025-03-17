@@ -2,18 +2,27 @@
     <div class="row">
         <div class="col-4 ">
             <div class="mb-3">
-                <form action="/Library" method="GET">
-                    <input class="btn btn-lg text-light" type="submit" value="Biblioteca"></input>
-                </form>
-                <form action="/Recomendaciones" method="GET">
-                    <input class="btn btn-lg text-light" type="submit" value="Recomendaciones"></input>
-                </form>
-                <form action="/AgregarPlaylist" method="GET">
-                    <input class="btn btn-lg text-light" type="submit" value="Nueva Playlist"></input>
-                </form>
-                <form action="/AgregarCancion" method="GET">
-                    <input class="btn btn-lg text-light" type="submit" value="Nueva Canción"></input>
-                </form>
+                <% for (let privilegio of privilegios) { %>
+                    <% if(privilegio.nombre=="crear cancion" ) { %>
+                    <a href="/Library" class="btn btn-lg text-light">
+                        Biblioteca
+                    </a>
+                <% } else if (privilegio.nombre=="agregar cancion biblioteca"){%>
+                    <a href="/Library" class="btn btn-lg text-light">
+                        Inicio
+                    </a>
+                    <br>
+                    <a href="/MyLibrary" class="btn btn-lg text-light">
+                        Mi biblioteca
+                    </a>
+                <% } } %>
+                <br>
+                <% for (let privilegio of privilegios) { %>
+                <% if(privilegio.nombre=="crear cancion" ) { %>
+                    <a href="/AgregarCancion" class="btn btn-lg text-light">
+                        Nueva Canción
+                    </a>
+                <% } }%>
             </div>
         </div>
     

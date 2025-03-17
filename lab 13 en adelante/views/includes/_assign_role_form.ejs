@@ -1,0 +1,73 @@
+<div class="col-8 offset-2">
+    <div class="table-responsive">
+        <table class="table table-sm text-center">
+            <thead class="table-info">
+                <th class="col-1">id</th>
+                <th class="col-3">usuario</th>
+                <th class="col-5">correo</th>
+                <th class="col-3">rol</th>
+                <th>created_at</th>
+            </thead>
+            <tbody class="table-dark">
+                <% let cont = 0; %>
+                <% for (let usuario of usuarios){%>
+                    <tr>
+                        <td> <%= usuario.id %></td>
+                        <td> <%= usuario.username %> </td>
+                        <td> <%= usuario.mail %> </td>
+                        <% if (roles && (cont < roles.length)) { %>
+                            <td>
+                                <% if (roles[cont].nombre == 'administrador') { %>
+                                    <form action="/users/ModificarRol/<%= usuario.id %>" method="POST">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <select name="id_rol" class="form-select bg-info-subtle mb-4" aria-label="Default select example">
+                                        <option selected> Administrador </option>
+                                        <option value="7">Usuario XP3</option>
+                                        <option value="8">Técnico RBAC</option>
+                                        </select>
+                                        <button type="submit" class="material-icons link-info bg-dark">check</button>
+                                    </form>
+                                <% } else if (roles[cont].nombre == 'usuarioxp3'){ %>
+                                    <form action="/users/ModificarRol/<%= usuario.id %>" method="POST">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <select name="id_rol" class="form-select bg-info-subtle mb-4" aria-label="Default select example">
+                                            <option selected> Usuario XP3</option>
+                                            <option value="6">Administrador</option>
+                                            <option value="8">Técnico RBAC</option>
+                                        </select>
+                                        <button type="submit" class="material-icons link-info bg-dark">check</button>
+                                    </form>
+                                <% } else if (roles[cont].nombre == 'tecnico_rbac') { %>
+                                    <form action="/users/ModificarRol/<%= usuario.id %>" method="POST">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <select name="id_rol" class="form-select bg-info-subtle mb-4" aria-label="Default select example">
+                                            <option selected> Técnico RBAC </option>
+                                            <option value="6">Administrador</option>
+                                            <option value="7">Usuario XP3</option>
+                                        </select>
+                                        <button type="submit" class="material-icons link-info bg-dark">check</button>
+                                    </form>
+                                <% } %>
+                            </td>
+                        <% } else { %>
+                            <td>
+                                <form action="/users/AsignarRol/<%= usuario.id %>" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <select name="id_rol" class="form-select bg-info-subtle mb-4" aria-label="Default select example">
+                                        <option selected>Por definir</option>
+                                        <option value="8"> Técnico RBAC </option>
+                                        <option value="6">Administrador</option>
+                                        <option value="7">Usuario XP3</option>
+                                    </select> 
+                                    <button type="submit" class="material-icons link-info bg-dark">check</button>
+                                </form>
+                            </td>
+                        <% } %>
+                        <td> <%= usuario.created_at %> </td>
+                    </tr>
+                    <% cont++; }%>
+            </tbody>
+
+        </table>
+    </div>
+</div>

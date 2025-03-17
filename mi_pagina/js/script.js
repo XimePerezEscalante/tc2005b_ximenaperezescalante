@@ -68,6 +68,21 @@ function e_dos(){
 
 //Ejercicio 3
 
+/* Función: contador. Parámetros: Un arreglo de números.
+Regresa: La cantidad de números negativos en el arreglo, 
+la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo. */
+
+function contador(arreglo){
+    for ()
+}
+
+
+
+
+
+
+
+
 const boton2 = document.getElementById("boton");
 
 const poner_imagen_menta = () => {

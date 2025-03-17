@@ -32,3 +32,11 @@ SELECT p.razonsocial, COUNT(*) as numEntregas
 FROM entregan e, proveedores p
 WHERE e.rfc = p.rfc
 GROUP BY razonsocial;
+
+/* Obtener la razón social de los proveedores con una cantidad mayor a 1000 */
+
+SELECT p.razonsocial, SUM(e.cantidad) AS cantidad_total
+FROM entregan e, proveedores p
+WHERE e.rfc = p.rfc
+GROUP BY p.razonsocial
+HAVING SUM(e.cantidad) > 1000;

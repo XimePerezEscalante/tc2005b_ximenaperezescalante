@@ -18,3 +18,10 @@ SELECT m.descripcion, e.fecha
 FROM materiales m, entregan e
 WHERE m.clave = e.clave 
 AND e.fecha LIKE '2000%';
+
+/* Obtener a qué proyectos han sido entregados los materiales */
+
+SELECT m.descripcion, e.fecha, p.denominacion
+FROM materiales m, entregan e, proyectos p
+WHERE m.clave = e.clave
+AND p.numero = e.numero;

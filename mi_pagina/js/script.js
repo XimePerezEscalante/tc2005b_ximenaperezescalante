@@ -115,17 +115,69 @@ console.log(promedios([[10,20,8,5],[31,9,6,2],[7,6,8,3]]));
 
 //Ejercicio 5
 
+function inverso(numero){
+    numero = numero.toString();
+    let longitud = numero.length - 1;
+    let nuevo_numero = '';
+    let digito = 0;
+    for(let i = 0; longitud >= 0; longitud--){
+    
+        digito = numero.charAt(longitud);
+        nuevo_numero = nuevo_numero + digito;
+    }
+    return(nuevo_numero);
+}
 
+console.log(inverso(911));
 
+//Ejercicio 6 
 
+class Tarea {
+    constructor(exercises, questions) {
+        this.ejercicios = exercises; //cantidad de ejercicios
+        this.preguntas = questions; //cantidad de preguntas
+        this.prioridad = this.calcularPrioridad();
+        this.tiempo = this.calcularTiempo();
+    }
 
+    getEjercicios(){
+        return (this.ejercicios);
+    }
 
-const boton2 = document.getElementById("boton");
+    getPreguntas(){
+        return (this.preguntas);
+    }
 
-const poner_imagen_menta = () => {
-    const imagen = document.getElementById("alberca");
-    imagen.innerHTML = `<img alt="Foto de una planta de menta" 
-        src="https://images.adsttc.com/media/images/646b/84e3/8e31/b857/d578/75f0/newsletter/albercas-de-piedra-sukabumi-una-propuesta-de-estetica-versatil_12.jpg?1684767987">`;
-};
+    getPrioridad(){
+        return (this.prioridad);
+    }
 
-boton.onclick = poner_imagen_menta;
+    getTiempo(){
+        return (this.tiempo);
+    }
+
+    calcularPrioridad() {
+        if (this.ejercicios >= 5 || this.preguntas >= 5) {
+            return ("Alta");
+        } else if (this.ejercicios >= 3 || this.preguntas >= 3) {
+            return ("Media");
+        } else {
+            return ("Baja");
+        }
+    }
+
+    calcularTiempo() {
+        let time = this.ejercicios * 5 + this.preguntas * 10;
+        time = time.toString();
+        return time + ' minutos';
+    }
+}
+
+const labEjemplo = new Tarea(4, 3);
+
+document.getElementById("ejemploE6").innerHTML = `
+    <p>Ejercicios: ${labEjemplo.ejercicios}</p>
+    <p>Preguntas: ${labEjemplo.preguntas}</p>
+    <p>Prioridad: ${labEjemplo.prioridad}</p>
+    <p>Tiempo estimado: ${labEjemplo.tiempo}</p>
+`;

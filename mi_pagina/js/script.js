@@ -1,3 +1,5 @@
+// Lab 4: Fundamentos de JavaScript
+
 //Ejercicio 1
 function e_uno(){
     let num = prompt("Escribe un número:");
@@ -68,15 +70,50 @@ function e_dos(){
 
 //Ejercicio 3
 
-/* Función: contador. Parámetros: Un arreglo de números.
-Regresa: La cantidad de números negativos en el arreglo, 
-la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo. */
-
 function contador(arreglo){
-    for ()
+    let negativos = 0;
+    let ceros = 0;
+    let positivos = 0;
+    for (let numero of arreglo){
+        if(numero < 0){
+            negativos++;
+        }
+        else if(numero == 0){
+            ceros++;
+        }
+        else{
+            positivos++;
+        }
+    }
+    return ('Negativos: ' + negativos + '  Ceros: ' + ceros + '   Positivos: ' + positivos);
+    /* console.log('Negativos: ' + negativos);
+    console.log('Ceros: ' + ceros);
+    console.log('Positivos: ' + positivos); */
+}
+console.log(contador([0,-4,3,7,10,-9,0,0,-3]));
+
+//Ejercicio 4
+
+function promedios(matriz){
+    let promedio = 0;
+    let cont = 0;
+    let arreglo_promedios = [];
+    for(arreglo of matriz){
+        for(numero of arreglo){
+            promedio = promedio + numero;
+            cont++;
+        }
+        promedio = promedio / cont;
+        arreglo_promedios.push(promedio);
+        promedio = 0;
+        cont = 0;
+    }
+    return(arreglo_promedios);
 }
 
+console.log(promedios([[10,20,8,5],[31,9,6,2],[7,6,8,3]]));
 
+//Ejercicio 5
 
 
 

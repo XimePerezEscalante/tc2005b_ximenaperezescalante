@@ -25,3 +25,10 @@ SELECT m.descripcion, e.fecha, p.denominacion
 FROM materiales m, entregan e, proyectos p
 WHERE m.clave = e.clave
 AND p.numero = e.numero;
+
+/* Obtener el número de entregas por proveedores */
+
+SELECT p.razonsocial, COUNT(*) as numEntregas
+FROM entregan e, proveedores p
+WHERE e.rfc = p.rfc
+GROUP BY razonsocial;

@@ -3,7 +3,8 @@
 <div class="col-8 ">
     <div class="container text-center">
         <div class="row">
-            <div class="col-md-5 mb-5 text-light fs-1"> <strong>Biblioteca</strong></div>
+            <div class="col-md-5 mb-5 text-light fs-1"> <strong>Biblioteca XP3</strong></div>
+            
         </div>
     </div>
     <div class="vstack gap-3">  
@@ -14,16 +15,39 @@
                     <div class="card-header">
                         <div class="row">
                             
-                            <div class="col-10 justify-content-start">
-                                <a href="/EliminarCancion/<%= cancion.id %>" class="material-icons link-info link-offset-3 link-underline-opacity-10">
-                                    delete
-                                </a>
-                            </div>
-                            <div class=" col-1 justify-content-end">
-                                <a href="/EditarCancion/<%= cancion.id %>" class="material-icons link-info link-offset-3 link-underline-opacity-10">
-                                    edit
-                                </a>
-                            </div>
+                            <% for (let privilegio of privilegios) { %>
+                                <% if(privilegio.nombre=="editar cancion" ) { %>
+                                    <div class="col-10 justify-content-start">
+                                        <a href="/EliminarCancion/<%= cancion.id %>"
+                                            class="material-icons link-info link-offset-3 link-underline-opacity-10">
+                                            delete
+                                        </a>
+                                    </div>
+                            
+                                    <div class=" col-1 justify-content-end">
+                                        <a href="/EditarCancion/<%= cancion.id %>"
+                                            class="material-icons link-info link-offset-3 link-underline-opacity-10">
+                                            edit
+                                        </a>
+                                    </div>
+                                <% } else if (privilegio.nombre=="agregar cancion biblioteca" ) {%>
+                                    <div class="col-8 justify-content-start">
+                                        
+                                    </div>
+                                    <div class=" col-2 justify-content-end">
+                                        <a href="/AgregarCancion/Playlist/<%= cancion.id %>"
+                                        class="material-icons link-success link-offset-3 link-underline-opacity-10">
+                                            playlist_add
+                                        </a>
+                                        
+                                    </div>
+                                    <div class=" col-1 justify-content-end">
+                                        <a href="/AgregarCancion/Biblioteca/<%= cancion.id %>"
+                                        class="material-icons link-success link-offset-3 link-underline-opacity-10">
+                                            add
+                                        </a>
+                                    </div>
+                                <% } } %>
                             
                         </div>
                     </div>

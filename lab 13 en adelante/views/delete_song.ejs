@@ -6,12 +6,16 @@
         <div class="card-header text-secondary">
             Eliminar canción 
         </div>
-        <form action="/EliminarCancion/<%= cancion.id %>" method="POST">
+        <form action="/EliminarCancion/<%= cancion.id %>/<% if (admin == false) { %>Biblioteca<% } %>" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="card-body text-danger">
                 <h5 class="card-title text-center">¿Estás seguro de que quieres eliminar '<%= cancion.nombre %> de <%=
                             cancion.artista %>' ?</h5>
-                <p class="card-text">Esta acción es permanente y quitará la canción de tu biblioteca.</p>
+                <% if(admin == true) { %>
+                    <p class="card-text">Esta acción es permanente y quitará la canción de la biblioteca XP3.</p>
+                <% } else { %>
+                    <p class="card-text">Esta acción es permanente y quitará la canción de tu biblioteca.</p>
+                <% } %>
                 <div class="text-center">
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>

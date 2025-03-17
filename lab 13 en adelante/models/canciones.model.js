@@ -42,8 +42,12 @@ module.exports = class Cancion {
         }
         
     }
-    static deleteSongUser(id){
+    static deleteSongAdmin(id){
         return db.execute('DELETE FROM canciones WHERE id = ?;', [id]);
+    }
+
+    static deleteSongUser(id_song, id_user){
+        return db.execute('DELETE FROM biblioteca WHERE cancion_id = ? AND usuario_id = ?;', [id_song, id_user]);
     }
 
 }

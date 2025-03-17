@@ -36,4 +36,34 @@ module.exports = class Usuario {
         }
     }
 
+    static asignarRoles(id_user, id_rol){
+        return db.execute(
+            `INSERT INTO usuario_rol(usuario_id, rol_id) VALUES (?, ?)`, [id_user,id_rol]
+        );
+    }
+
+    static modificarRoles(id_user, id_rol){
+        return db.execute(
+            'UPDATE usuario_rol SET rol_id = ? WHERE usuario_id = ?', [id_rol, id_user]
+        );
+    }
+
+    static getRoles() {
+        return db.execute(`
+            SELECT r.nombre
+            FROM roles r, usuario_rol ur
+            WHERE r.id=ur.rol_id
+            ORDER BY ur.usuario_id
+        `);
+    }
+
+    static getPrivilegios(username) {
+        return db.execute(`
+            SELECT DISTINCT p.nombre
+            FROM privilegios p, rol_privilegio rp, roles r, usuario_rol ur, usuarios u
+            WHERE p.id=rp.privilegio_id AND rp.rol_id=r.id AND r.id=ur.rol_id 
+                AND u.id=ur.usuario_id AND u.username=?`, 
+            [username]);
+    }
+
 }

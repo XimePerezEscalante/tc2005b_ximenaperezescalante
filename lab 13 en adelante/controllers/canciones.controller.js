@@ -12,8 +12,9 @@ exports.get_agregar = (request, response, next) => {
 
 
 exports.post_agregar = (request, response, next) => {
+    console.log(request.file);
     console.log(request.body);
-    const mi_cancion = new Cancion(request.body.songname, request.body.artist);
+    const mi_cancion = new Cancion(request.body.songname, request.body.artist, request.file.filename);
     mi_cancion.save()
         .then(() => {
             request.session.info = `La cancion ${mi_cancion.name} se ha creado`;

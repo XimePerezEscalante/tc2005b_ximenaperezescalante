@@ -3,14 +3,15 @@ const db = require('../util/database');
 module.exports = class Cancion {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
-    constructor(mi_nombre,mi_artista) {
+    constructor(mi_nombre,mi_artista,mi_imagen) {
         this.name = mi_nombre;
         this.artist = mi_artista;
+        this.coverArt = mi_imagen;
     }
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        return db.execute('INSERT INTO canciones(nombre,artista) VALUES (?,?)', [this.name, this.artist]);
+        return db.execute('INSERT INTO canciones(nombre, artista, imagen) VALUES (?,?,?)', [this.name, this.artist,this.coverArt]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

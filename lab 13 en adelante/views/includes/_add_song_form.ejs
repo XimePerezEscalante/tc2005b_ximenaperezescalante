@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-5 mb-5 text-light fs-1"> <strong>Nueva canción</strong></div>
         </div>
-        <form action="/AgregarCancion" method="POST">
+        <form action="/AgregarCancion" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="row">
                 <div class="col-md-5 mb-3 text-light">
@@ -20,6 +20,14 @@
                         <span class="input-group-text bg-info-subtle" id="basic-addon1">Artista</span>
                         <input type="text" class="form-control" name="artist" aria-label="artist"
                             aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 mb-3 text-light">
+                    <div class="input-group mb-3">
+                        <label for="cover_art" class="form-label">Imagen de portada</label>
+                        <input class="form-control" type="file" id="cover_art" name="cover_art">
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const db = require('../util/database');
 
 module.exports = class Cancion {
@@ -49,6 +50,10 @@ module.exports = class Cancion {
 
     static deleteSongUser(id_song, id_user){
         return db.execute('DELETE FROM biblioteca WHERE cancion_id = ? AND usuario_id = ?;', [id_song, id_user]);
+    }
+
+    static find(name_song){
+        return db.execute('SELECT nombre, artista, imagen FROM canciones WHERE nombre LIKE ?', [name_song]);
     }
 
 }

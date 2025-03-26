@@ -24,6 +24,8 @@ app.use((request, response, next) => {
     next(); 
 });
 
+app.use(bodyParser.json());
+
 const multer = require('multer');
 
 //fileStorage: Es nuestra constante de configuración para manejar el almacenamiento

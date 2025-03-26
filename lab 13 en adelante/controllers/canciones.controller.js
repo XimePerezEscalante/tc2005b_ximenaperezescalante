@@ -192,3 +192,13 @@ exports.get_root_biblioteca = (request, response, next) => {
             console.log(error);
         });
 };
+
+exports.get_buscar = (request, response, next) => {
+    Cancion.find(request.params.nombre)
+    .then(([rows, fieldData]) => {
+            response.status(200).json({canciones: rows});
+    })
+    .catch((error) => {
+            response.status(500).json({message: "Servidor en peligro de extinción"});
+    });
+}

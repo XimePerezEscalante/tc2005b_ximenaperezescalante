@@ -1,4 +1,7 @@
 const Usuario = require('../models/users.model');
+// Require:
+var postmark = require("postmark");
+const twofactor = require("node-2fa");
 
 exports.get_signup = (request, response, next) => {
     const mensaje = request.session.info || '';
@@ -23,6 +26,17 @@ exports.post_signup = (request, response, next) => {
 
     usuario.save().then(() => {
         request.session.info = `Nueva cuenta creada`;
+        /* var client = new postmark.ServerClient("0530a80f-f4e0-4115-9702-b1d6292dd7ba");
+
+        client.sendEmail({
+            "From": "gescalanpjj@gmail.com",
+            "To": "gescalanpjj@gmail.com",
+            "Subject": "Nuevo usuario creado",
+            "HtmlBody": "<strong>Hello</strong> " + request.body.username + "!",
+            "TextBody": "Hello from Postmark!",
+            "MessageStream": "outbound"
+        }); */
+
         response.redirect('/users/Login');
     }).catch((error) => {
         console.log(error);

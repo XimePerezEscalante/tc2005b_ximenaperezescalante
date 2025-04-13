@@ -7,7 +7,10 @@
             
         </div>
     </div>
-    <div class="vstack gap-3">  
+    <div class="container">
+        <input name="fsrch" id="fsrch" placeholder="Search W3Schools">
+    </div>
+    <div class="vstack gap-3" id="main_container">  
         <% for (let cancion of canciones){ %>
             <div class="container">
                 <div class="card border-info mb-3 songsLibrary">
@@ -51,6 +54,9 @@
                             
                         </div>
                     </div>
+                    <div class="card-img-top text-center mt-3">
+                        <img src="/uploads/<%=cancion.imagen%>" class="coverLibrary ">
+                    </div>
                     <div class="card-body text-center">
                         <h5 class="card-title"><%= cancion.nombre %></h5>
                         <p class="card-text"><%= cancion.artista %></p>
@@ -61,6 +67,39 @@
     </div>
 </div>
 </div>
+<script> 
+    const buscar = document.getElementById('fsrch');
+    buscar.onkeyup = () => {
+        console.log(fsrch.value);
+        fetch('/Library/buscar/' + fsrch.value, {
+            method: 'GET'
+        })
+        .then( (result) => {
+            return result.json();
+        })
+        .then( (data) => {
+            const container = document.getElementById('main_container');
+            for (cancion of data.canciones){
+                console.log(data.cancion.artista);
+                container.innerHTML = `
+                                            <div class="container">
+                                                <div class="card border-info mb-3 songsLibrary">
+                                                    <div class="card-header">
+                                                        ${cancion.nombre}
+                                                        ${cancion.artista}
+                                                        ${cancion.imagen}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `
+            
+        }})
+        .catch( (error) => {
+            console.log(error);
+        } );
+    }
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

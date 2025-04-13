@@ -35,4 +35,6 @@ router.post('/EliminarCancion/:id/Biblioteca', isAuth, canViewPrivateLibrary, ca
 
 router.get('/MyLibrary', isAuth, canViewPrivateLibrary, canciones_controller.get_root_biblioteca);
 
+router.get('/Library/buscar/:nombre', isAuth, canCreate, canciones_controller.get_buscar);
+
 module.exports = router;

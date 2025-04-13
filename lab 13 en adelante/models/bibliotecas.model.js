@@ -15,7 +15,7 @@ module.exports = class Biblioteca {
 
     static fetchAll(user_id) {
         return db.execute(
-            `SELECT c.id, c.nombre, c.artista 
+            `SELECT c.id, c.nombre, c.artista, c.imagen 
             FROM biblioteca b, canciones c
             WHERE b.cancion_id=c.id AND b.usuario_id = ?`,
             [user_id]);

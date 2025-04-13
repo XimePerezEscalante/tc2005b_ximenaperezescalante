@@ -12,8 +12,9 @@ exports.get_agregar = (request, response, next) => {
 
 
 exports.post_agregar = (request, response, next) => {
+    console.log(request.file);
     console.log(request.body);
-    const mi_cancion = new Cancion(request.body.songname, request.body.artist);
+    const mi_cancion = new Cancion(request.body.songname, request.body.artist, request.file.filename);
     mi_cancion.save()
         .then(() => {
             request.session.info = `La cancion ${mi_cancion.name} se ha creado`;
@@ -191,3 +192,13 @@ exports.get_root_biblioteca = (request, response, next) => {
             console.log(error);
         });
 };
+
+exports.get_buscar = (request, response, next) => {
+    Cancion.find(request.params.nombre)
+    .then(([rows, fieldData]) => {
+            response.status(200).json({canciones: rows});
+    })
+    .catch((error) => {
+            response.status(500).json({message: "Servidor en peligro de extinción"});
+    });
+}
